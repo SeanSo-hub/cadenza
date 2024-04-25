@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('event_banner')->nullable();
             $table->string('tags');
             $table->string('organizer');
             $table->string('location');

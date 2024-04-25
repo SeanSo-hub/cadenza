@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('components.layout')
 
 @section('content')
     @include('partials._hero')
@@ -14,6 +14,10 @@
             <p>No listings Found</p>
         @endunless
 
+    </div>
+
+    <div class="mt-4 pl-4 pr-4">
+        {{ $listings->links('pagination::bootstrap-5') }}
     </div>
 
 @endsection

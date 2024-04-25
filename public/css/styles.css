@@ -1,0 +1,23 @@
+/* Custom pagination color */
+.text-muted {
+    color: #000000 !important;
+}
+
+.pagination .page-link {
+    color: black; /* Change to your desired color */
+    background-color: white;
+}
+
+/* Hover color for pagination links */
+.pagination .page-link:hover {
+    color: #000000; /* Change to your desired hover color */
+}
+
+.pagination .page-item.active .page-link {
+    background: #f56f16; /* Change to your desired hover color */
+    border: solid #f56f16 1px;
+}
+
+.z-999 {
+    z-index: 999;
+}

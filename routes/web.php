@@ -16,10 +16,16 @@ use App\Http\Controllers\ListingController;
 */
 
 
-// All listings
+//all listings
 Route::get('/', [ListingController::class, 'index']);
 
-// Show single listing 
+//show create
+Route::get('/listings/create', [ListingController::class, 'create']);
+Route::post('/listings', [ListingController::class, 'store']);
+
+//show single listing 
 Route::get('/listings/{id}', [ListingController::class, 'show']);
+
+
 
  
