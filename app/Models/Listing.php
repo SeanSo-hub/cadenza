@@ -16,7 +16,8 @@ class Listing extends Model
         'email',
         'tags',
         'description',
-        'event_banner'
+        'event_banner',
+        'contact_number'
     ];
 
     public function scopeFilter($query, array $filters) {

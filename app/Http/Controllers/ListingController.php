@@ -27,21 +27,24 @@ class ListingController extends Controller
         }
     }
 
-    public function create() {
+    public function create()
+    {
         return view('listings.create');
     }
 
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
         $formFields = $request->validate([
             'title' => 'required',
             'organizer' => 'required',
             'location' => 'required',
             'email' => ['required', 'email'],
+            'contact_number' => ['required', 'numeric', 'digits_between:7,15'],
             'tags' => 'required',
             'description' => 'required'
         ]);
 
-        if($request->hasFile('event_banner')) {
+        if ($request->hasFile('event_banner')) {
             $formFields['event_banner'] = $request->file('event_banner')->store('event-banners', 'public');
         }
 
@@ -50,4 +53,38 @@ class ListingController extends Controller
         return redirect('/')->with('message', 'Gig created successfully!');
     }
 
+    public function edit($id)
+    {
+        $listing = Listing::find($id);
+        
+        return view('listings.edit', ['listing' => $listing]);
+    }
+
+    public function update(Request $request, Listing $id) {
+        $formFields = $request->validate([
+            'title' => 'required',
+            'organizer' => 'required',
+            'location' => 'required',
+            'email' => ['required', 'email'],
+            'contact_number' => ['required', 'numeric', 'digits_between:7,15'],
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+
+        if ($request->hasFile('event_banner')) {
+            $formFields['event_banner'] = $request->file('event_banner')->store('event-banners', 'public');
+        }
+
+        $id->update($formFields);
+
+        return back()->with('message', 'Gig updated successfully!');
+    }
+
+    public function destroy($id) {
+        $listing = Listing::where('id', $id);
+        $listing->delete();
+
+        return redirect('/')->with('message', 'Listing deleted successfully!');
+    }
+    
 }

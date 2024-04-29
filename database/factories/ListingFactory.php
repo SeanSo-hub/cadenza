@@ -22,6 +22,7 @@ class ListingFactory extends Factory
             'organizer' => fake()->sentence(),
             'location' => fake()->city(),
             'email' => fake()->unique()->safeEmail(),
+            'contact_number' => '0' . fake()->numberBetween(90000000000, 99999999999),
             'description' => fake()->paragraph(5),
         ];
     }

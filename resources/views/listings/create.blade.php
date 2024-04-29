@@ -1,7 +1,8 @@
 @extends('components.layout')
 
 @section('content')
-    <x-card class="!p-10 rounded max-w-lg mx-auto mt-24">
+<div class="px-4 md:px-0">
+    <x-card class="!p-10 rounded max-w-4xl mx-auto mt-24">
         <header class="text-center">
             <h2 class="text-2xl font-bold uppercase mb-1">
                 Create a Gig
@@ -51,12 +52,17 @@
                 @enderror
             </div>
 
-            {{-- <div class="mb-6">
-                <label for="website" class="inline-block text-lg mb-2">
-                    Website/Application URL
+            <div class="mb-6">
+                <label for="contact_number" class="inline-block text-lg mb-2">
+                    Contact number
                 </label>
-                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="website" />
-            </div> --}}
+                <input type="text" class="border border-gray-200 rounded p-2 w-full" name="contact_number"
+                    value="{{ old('contact_number') }}" />
+
+                @error('contact_number')
+                    <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
 
             <div class="mb-6">
                 <label for="tags" class="inline-block text-lg mb-2">
@@ -92,13 +98,18 @@
                 @enderror
             </div>
 
-            <div class="mb-6">
+            <div class="mb-6 flex justify-end items-center">
+
+                <a href="/" class="text-black mr-4"> Back </a>
+
                 <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
                     Create Gig
                 </button>
 
-                <a href="/" class="text-black ml-4"> Back </a>
+
             </div>
         </form>
     </x-card>
+
+</div>
 @endsection

@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             'organizer' => 'Bukidnon Music Entertainment',
             'location' => 'Malaybalay City, Capitol Grounds',
             'email' => 'kaamulan@email.com',
+            'contact_number' => '09924928176',
             'description' => 'Join us for a euphoric celebration of music and culture at the Kaamulan Music Festival! 
             Held in the heart of downtown, this electrifying event brings together world-class musicians, passionate fans, 
             and vibrant performers for an unforgettable weekend of rhythm and soul.'
@@ -37,6 +38,7 @@ class DatabaseSeeder extends Seeder
             'organizer' => 'Fliptop Entertainment',
             'location' => 'Pasay City, Music Theater',
             'email' => 'fliptop@email.com',
+            'contact_number' => '09924928170',
             'description' => 'Experience the rhythm, rhyme, and raw energy of the urban streets at our Fliptop Music Festival! 
             Join us for a celebration of the culture, beats, and creativity that define the hip-hop movement. 
             Immerse yourself in a world where music becomes poetry, and dance becomes an expression of life. 

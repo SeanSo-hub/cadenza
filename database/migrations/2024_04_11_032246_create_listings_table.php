@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('event_banner')->nullable();
             $table->string('tags');
+            $table->string('contact_number');
             $table->string('organizer');
             $table->string('location');
             $table->string('email');
